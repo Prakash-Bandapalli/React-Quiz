@@ -78,7 +78,7 @@ export default function App() {
   );
 
   useEffect(() => {
-    fetch("http://localhost:8000/questions")
+    fetch("https://json-server-jn0r.onrender.com/questions")
       .then((res) => res.json())
       .then((res) => dispatch({ type: "dataReceived", payload: res }))
       .catch((err) => dispatch({ type: "dataFailed" }));
