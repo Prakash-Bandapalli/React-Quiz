@@ -81,7 +81,10 @@ export default function App() {
     fetch("https://json-server-jn0r.onrender.com/questions")
       .then((res) => res.json())
       .then((res) => dispatch({ type: "dataReceived", payload: res }))
-      .catch((err) => dispatch({ type: "dataFailed" }));
+      .catch((err) => {
+        console.log(err);
+        dispatch({ type: "dataFailed" });
+      });
   }, []);
   return (
     <div className="app">
